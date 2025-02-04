@@ -8,6 +8,7 @@ class InputParser
   def place(x, y, direction)
     return nil unless (0..@x).include?(x) && (0..@y).include?(y)
     return nil unless %w[NORTH SOUTH EAST WEST].include?(direction)
+
     @current_position = [x, y, direction]
   end
 
@@ -21,7 +22,10 @@ class InputParser
     elsif direction == 'WEST'
       temp_mover = [x - 1, y, direction]
     end
-    @current_position = temp_mover if valid_movement?(*temp_mover)
+
+    return nil unless valid_movement?(*temp_mover)
+
+    @current_position = temp_mover
   end
 
   private
