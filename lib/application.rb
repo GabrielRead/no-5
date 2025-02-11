@@ -14,9 +14,9 @@ class Application
 
   def start
     while (input = prompt)
-      next unless (command, args = InputParser.parse(input))
-
       begin
+        next unless (command, args = InputParser.parse(input))
+
         command.run *args, **context
       rescue ApplicationError => e
         stdout.puts e.message
