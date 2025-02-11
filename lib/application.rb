@@ -7,7 +7,7 @@ class Application
   end
 
   def start
-    puts 'Success'
+    Helpers::ParseInput.call 'PLACE 1,2,NORTH'
   end
 
   private
