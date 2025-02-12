@@ -33,14 +33,14 @@ RSpec.describe InputParser, type: :service do
     end
 
     context 'when the input includes arguments' do
-      context 'as comma separated' do
+      context 'when comma separated' do
         it 'contains the arguments as an array' do
           expect(subject.parse('PLACE 0,0,NORTH').last)
             .to eq [0, 0, 'NORTH']
         end
       end
 
-      context 'as comma separated with whitespace padding' do
+      context 'when comma separated with whitespace padding' do
         it 'contains the arguments as an array' do
           expect(subject.parse('PLACE 0 ,          0, NORTH').last)
             .to eq [0, 0, 'NORTH']

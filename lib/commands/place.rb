@@ -18,11 +18,15 @@ class Place < CommandBase
       validate_coordinate x, :x
       validate_coordinate y, :y
 
+      unless Compass::DIRECTIONS.include? direction
+        raise ValidationError, I18n.t('errors.invalid_direction', direction:)
+      end
+
       true
     end
 
     def validate_coordinate(coordinate, arg)
-      return true if coordinate.is_a?(Integer) and coordinate >= 0
+      return true if coordinate.is_a?(Integer) && coordinate >= 0
 
       raise ValidationError, I18n.t('errors.not_an_integer', arg:)
     end

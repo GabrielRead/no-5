@@ -6,7 +6,7 @@ RSpec.describe Compass, type: :model do
 
     it 'includes NORTH, EAST, SOUTH, WEST' do
       expect(subject::DIRECTIONS)
-        .to match_array %W[NORTH EAST SOUTH WEST]
+        .to match_array %w[NORTH EAST SOUTH WEST]
     end
   end
 

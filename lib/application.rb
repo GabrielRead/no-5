@@ -17,7 +17,7 @@ class Application
       begin
         next unless (command, args = InputParser.parse(input))
 
-        command.run *args, **context
+        command.run(*args, **context)
       rescue ApplicationError => e
         stdout.puts e.message
       end
