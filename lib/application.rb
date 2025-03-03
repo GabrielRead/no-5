@@ -8,7 +8,7 @@ class Application
 
   def start
     while (input = stdin.gets)
-      put input
+      puts input
     end
   end
 
