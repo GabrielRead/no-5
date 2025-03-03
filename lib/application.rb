@@ -7,7 +7,9 @@ class Application
   end
 
   def start
-    puts 'Success'
+    while (input = stdin.gets)
+      put input
+    end
   end
 
   private
